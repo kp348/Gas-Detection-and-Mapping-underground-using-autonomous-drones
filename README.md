@@ -24,13 +24,13 @@ The system leverages LiDAR 360 and the Optical Flow Sensor (PMW3901) for navigat
 ### Communication System – Breadcrumb Repeater
 - The drone communicates using a LoRa-based mesh network:
 - Each Breadcrumb Repeater consists of:
-- STM32F401CCU6 microcontroller
-- LoRa Radio module
-- Independent LiPo power source
-- A signal strength threshold (in dBm) is set based on terrain conditions.
-- When the drone’s signal drops below the threshold, it deploys a breadcrumb repeater as a payload.
-- These repeaters form a LoRa mesh network, relaying data back to the base station.
-- Self-healing network → even if one repeater fails, data transmission continues via alternative routes.
+-- STM32F401CCU6 microcontroller
+-- LoRa Radio module
+-- Independent LiPo power source
+-- A signal strength threshold (in dBm) is set based on terrain conditions.
+-- When the drone’s signal drops below the threshold, it deploys a breadcrumb repeater as a payload.
+-- These repeaters form a LoRa mesh network, relaying data back to the base station.
+-- Self-healing network → even if one repeater fails, data transmission continues via alternative routes.
 
 ### Simulation and Path Planning
 - MATLAB Simulink + Stateflow used to simulate drone behavior.
