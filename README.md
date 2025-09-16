@@ -36,9 +36,9 @@ The system leverages LiDAR 360 and the Optical Flow Sensor (PMW3901) for navigat
 - MATLAB Simulink + Stateflow used to simulate drone behavior.
 - Integrated sensors (MQ-9, NDIR, AO-O2, LiDAR) in signal processing blocks for data acquisition.
 - Path Planning Algorithm includes:
-- Takeoff
-- Forward / Left / Right movement
-- Obstacle avoidance
-- Return and landing
-- Scope blocks used for visualizing sensor outputs.
-- Alternative simulation possible with MATLAB Simulink + Gazebo + ROS in Ubuntu for higher fidelity.
+-- Takeoff
+-- Forward / Left / Right movement
+-- Obstacle avoidance
+-- Return and landing
+-- Scope blocks used for visualizing sensor outputs.
+-- Alternative simulation possible with MATLAB Simulink + Gazebo + ROS in Ubuntu for higher fidelity.
