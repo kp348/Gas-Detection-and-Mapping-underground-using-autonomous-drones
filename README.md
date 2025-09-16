@@ -1,7 +1,44 @@
-Smart India Hackathon 2025
-Team Genesis- Gas Detection and Mapping underground using autonomous drone
+# Smart India Hackathon 2025
+## Team Genesis – Gas Detection and Mapping in Underground Mines using Autonomous Drone
 
-1. This repository features a fully autonomous drone which works in a GPS denied environment, using LiDar 360 and Optical flow sensor (PMW3901). The application of this drone is Hazardous Gas Detection and Mapping in Underground Mines using gas detection, LiDar and Optical Flow sensors. Optical flow senors is used as a better alternative for sensing the objeects around our drone which helps our autonomous drone to move on the pass which is deemed possible by our path plannig algorithm.
-2. The sensors consist of Optical FLow sensor (Object Detection)(PMW3901),IMU(Inertial Measurement Unit-For Acceleration and Gyro of drone)(Bosch BNO055),MQ-9 (For detecting CO and CH4),NDIR(Non-Dispersive Infrared Sensor-CO2)(SCD-40),AO-O2(For O2) and LiDar(Used for 3D mapping).
-3. The drone works on a communication method known as "Breadcrumb Repeater" which is a device having it's own power source(LiPO) ,LoRa Radio module and STM32F401CCU6 inside which acts as a microcontroller and it oversees all the basic functions of repeater module. A threshold for signal strength is set to be at a certain dBm according to the terrain conditions. When the drone's signal strength falls below the set threshold, it will deploy a breadcrumb module which is treated as a payload. These breadcrumb modules forms a LoRa mesh network, through which the data is transmitted from drone to the nearest repeater and then it reaches the base station through efficient hopping of data packages over the repeater modules. A major advantage of this mesh system is that even if a repeater module stops working, the system is still intact and data can still get transmitted smoothly
-4. We used Simulink by MATLAB to simulate our autonomous drone is the suitable environment. Then we incorporated the sensors - MQ9, NIDAR, AO-O2 and LiDar to do the gas detection and path mapping, we made changes in signal processing block to deploy this. Then for the drone to fly and avoid obstacle we made the Path planning algorithm using Stateflow and Simulink by giving all the necessary operations like takeoff, move forward, right left, return and landing. To get the outputs of the sensors as the data requirements we have used the scope blocks. Alternatively the autonomous drone can be simulated using MATLAB Simlink + Gazebo + ROS(Robot Opertaing System) in Ubuntu.
+### Project Overview
+This repository features a fully autonomous drone designed to operate in GPS-denied environments for hazardous gas detection and underground mine mapping.
+The system leverages LiDAR 360 and the Optical Flow Sensor (PMW3901) for navigation and obstacle avoidance, ensuring safe and reliable operations in complex underground terrains.
+
+### Key Features
+- Autonomous navigation in GPS-denied environments.
+- Gas detection and mapping in underground mines.
+- Advanced sensors for obstacle detection and environment mapping.
+- LoRa mesh communication using Breadcrumb Repeater Modules.
+- MATLAB Simulink + Stateflow simulation for path planning and control logic.
+- Optional support for ROS + Gazebo simulation in Ubuntu.
+
+###  Sensors Used
+- PMW3901 Optical Flow Sensor → Object detection and navigation.
+- Bosch BNO055 IMU → Acceleration and gyroscopic measurements.
+- MQ-9 Sensor → Detection of CO and CH₄ gases.
+- SCD-40 NDIR Sensor → Detection of CO₂ gas.
+- AO-O2 Sensor → Oxygen level monitoring.
+- 360° LiDAR → 3D mapping and obstacle avoidance.
+
+### Communication System – Breadcrumb Repeater
+- The drone communicates using a LoRa-based mesh network:
+- Each Breadcrumb Repeater consists of:
+- STM32F401CCU6 microcontroller
+- LoRa Radio module
+- Independent LiPo power source
+- A signal strength threshold (in dBm) is set based on terrain conditions.
+- When the drone’s signal drops below the threshold, it deploys a breadcrumb repeater as a payload.
+- These repeaters form a LoRa mesh network, relaying data back to the base station.
+- Self-healing network → even if one repeater fails, data transmission continues via alternative routes.
+
+### Simulation and Path Planning
+- MATLAB Simulink + Stateflow used to simulate drone behavior.
+- Integrated sensors (MQ-9, NDIR, AO-O2, LiDAR) in signal processing blocks for data acquisition.
+- Path Planning Algorithm includes:
+- Takeoff
+- Forward / Left / Right movement
+- Obstacle avoidance
+- Return and landing
+- Scope blocks used for visualizing sensor outputs.
+- Alternative simulation possible with MATLAB Simulink + Gazebo + ROS in Ubuntu for higher fidelity.
